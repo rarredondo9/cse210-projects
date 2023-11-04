@@ -1,12 +1,12 @@
 using System;
 
-public abstract class ActivityClass
+public abstract class Activity
 {
     protected string name;
     protected string description;
     protected int duration;
 
-    public ActivityClass (string name, string description)
+    public Activity(string name, string description)
     {
         this.name = name;
         this.description = description;
@@ -30,10 +30,10 @@ public abstract class ActivityClass
 
     protected void DisplayEndingMessage()
     {
-        Console.WriteLine($"Great Job! You have completed the {name} Activity.");
+        Console.WriteLine($"Great job! You have completed the {name} Activity.");
         Console.WriteLine($"Duration: {duration} seconds");
         System.Threading.Thread.Sleep(2000);
-        Console.WriteLine("Activity Completed.");
+        Console.WriteLine("Activity completed.");
         System.Threading.Thread.Sleep(2000);
     }
 
