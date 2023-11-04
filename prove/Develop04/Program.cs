@@ -55,8 +55,8 @@ class Program
         {
             case 1:
                 return new BreathingActivity();
-            // case 2:
-            //     return new ReflectionActivity();
+            case 2:
+                return new ReflectionActivity();
             // case 3:
             //     return new ListingActivity();
             default:
