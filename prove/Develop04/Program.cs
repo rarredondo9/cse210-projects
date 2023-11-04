@@ -57,8 +57,8 @@ class Program
                 return new BreathingActivity();
             case 2:
                 return new ReflectionActivity();
-            // case 3:
-            //     return new ListingActivity();
+            case 3:
+                return new ListingActivity();
             default:
                 throw new ArgumentOutOfRangeException("Invalid activity choice.");
         }
