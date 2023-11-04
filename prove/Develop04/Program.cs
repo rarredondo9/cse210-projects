@@ -9,12 +9,13 @@ class Program
             Console.WriteLine("\nMenu:");
             Console.WriteLine("1. Breathing Activity");
             Console.WriteLine("2. Reflection Activity");
-            Console.WriteLine("3. Enumeration Activity");
-            Console.WriteLine("4. Quit");
+            Console.WriteLine("3. Listing Activity");
+            Console.WriteLine("4. Meditation Activity");
+            Console.WriteLine("5. Quit");
 
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
-            if (choice == "4")
+            if (choice == "5")
             {
                 Console.WriteLine("Goodbye!");
                 break;
@@ -22,7 +23,7 @@ class Program
             
             if (int.TryParse(choice, out int activityChoice))
             {
-                if (activityChoice >= 1 && activityChoice <= 3)
+                if (activityChoice >= 1 && activityChoice <= 4)
                 {
                     Console.Write("Enter duration (in seconds): ");
                     int duration;
@@ -59,6 +60,8 @@ class Program
                 return new ReflectionActivity();
             case 3:
                 return new ListingActivity();
+            case 4:
+                return new MeditationActivity();
             default:
                 throw new ArgumentOutOfRangeException("Invalid activity choice.");
         }
