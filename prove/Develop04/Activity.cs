@@ -12,6 +12,11 @@ public abstract class Activity
         this.description = description;
     }
 
+    public void SetDuration(int duration)
+    {
+        this.duration = duration;
+    }
+
     public void Start()
     {
         DisplayStartingMessage();
