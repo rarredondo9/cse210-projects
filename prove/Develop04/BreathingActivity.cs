@@ -12,9 +12,18 @@ public class BreathingActivity : Activity
         for (int i = 0; i < duration; i++)
         {
             Console.WriteLine("Breathe in...");
-            Thread.Sleep(2000);
+            Countdown(3);
             Console.WriteLine("Breathe out...");
-            Thread.Sleep(2000);
+            Countdown(3);
+        }
+    }
+
+    private void Countdown(int seconds)
+    {
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.WriteLine($"{i}");
+            Thread.Sleep(1000);
         }
     }
 }

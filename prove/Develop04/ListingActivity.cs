@@ -18,8 +18,13 @@ public class ListingActivity : Activity
     protected override void PerformActivity()
     {
         Console.WriteLine($"Prompt: {prompts[new Random().Next(prompts.Length)]}");
-        Thread.Sleep(2000);
+        Countdown(5); 
         Console.WriteLine("Start listing items (type 'q' to finish):");
+        ListItems();
+    }
+
+    private void ListItems()
+    {
         int itemCount = 0;
         DateTime startTime = DateTime.Now;
         while (DateTime.Now - startTime < TimeSpan.FromSeconds(duration))
@@ -30,5 +35,14 @@ public class ListingActivity : Activity
             itemCount++;
         }
         Console.WriteLine($"You listed {itemCount} items.");
+    }
+
+    private void Countdown(int seconds)
+    {
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.WriteLine($"{i}");
+            Thread.Sleep(1000); // Pause for 1 second
+        }
     }
 }

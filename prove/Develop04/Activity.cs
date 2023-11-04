@@ -41,6 +41,14 @@ public abstract class Activity
         Console.WriteLine("Activity completed.");
         System.Threading.Thread.Sleep(2000);
     }
+    protected void Countdown(int seconds)
+    {
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.WriteLine($"Countdown: {i} seconds");
+            Thread.Sleep(1000); // Pause for 1 second
+        }
+    }
 
     protected abstract void PerformActivity();
 }

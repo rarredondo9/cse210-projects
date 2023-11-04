@@ -31,13 +31,30 @@ public class ReflectionActivity : Activity
     {
         Console.WriteLine($"Prompt: {prompts[new Random().Next(prompts.Length)]}");
         Thread.Sleep(2000);
-        for (int i = 0; i < duration; i++)
+
+        for (int i = 0; i < duration;)
         {
             string question = questions[new Random().Next(questions.Length)];
             Console.WriteLine(question);
             Thread.Sleep(4000);
             Console.WriteLine("Reflecting...");
-            Thread.Sleep(2000);
+            i += 6;
+            ShowSpinner();
         }
+    }
+
+    private void ShowSpinner()
+    {
+        string[] spinnerFrames = { "|", "/", "-", "\\" };
+        int frameIndex = 0;
+
+        for (int i = 0; i < 5; i++)
+        {
+            Console.Write($"\r{spinnerFrames[frameIndex]}");
+            Thread.Sleep(500);
+            frameIndex = (frameIndex + 1) % spinnerFrames.Length;
+        }
+
+        Console.WriteLine();
     }
 }
