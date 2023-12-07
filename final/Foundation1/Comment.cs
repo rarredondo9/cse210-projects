@@ -11,7 +11,7 @@ public class Comment
         CommentText = commentText;
     }
 
-    public void DisplayComment()
+    public void Display()
     {
         Console.WriteLine($"Comment by {Name}: {CommentText}");
     }

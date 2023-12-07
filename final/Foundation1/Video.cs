@@ -6,19 +6,24 @@ public class Video
     public string Title { get; set; }
     public string Author { get; set; }
     public string Length { get; set; }
-    public List<Comment> CommentList { get; set; }
+    private List<Comment> commentList;
 
     public Video(string title, string author, string length)
     {
         Title = title;
         Author = author;
         Length = length;
-        CommentList = new List<Comment>();
+        commentList = new List<Comment>();
     }
 
-    public int ComputeNumberOfComments()
+    public int GetNumberOfComments()
     {
-        return CommentList.Count;
+        return commentList.Count;
+    }
+
+    public void AddComment(Comment comment)
+    {
+        commentList.Add(comment);
     }
 
     public void DisplayDetails()
@@ -26,15 +31,15 @@ public class Video
         Console.WriteLine($"Title: {Title}");
         Console.WriteLine($"Author: {Author}");
         Console.WriteLine($"Length: {Length}");
-        Console.WriteLine($"Number of comments: {ComputeNumberOfComments()}");
+        Console.WriteLine($"Number of comments: {GetNumberOfComments()}");
         DisplayComments();
     }
 
-    public void DisplayComments()
+    private void DisplayComments()
     {
-        foreach (var comment in CommentList)
+        foreach (var comment in commentList)
         {
-            comment.DisplayComment();
+            comment.Display();
         }
     }
 }
